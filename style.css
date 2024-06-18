@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  align-items: center;
+  /* https://www.grabient.com/ */
+  background-image: linear-gradient(90deg, #ffe53b 0%, #ff2525 74%);
+}
+
+header input {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.289);
+}
+
+header div {
+  display: flex;
+  gap: 20px;
+}
+
+header button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+}
+
+header div button:nth-child(2) {
+  background-color: blue;
+}
+
+header div button:nth-child(3) {
+  background-color: yellow;
+  color: red;
+}
+
+/* main içerik */
+
+section {
+  padding: 50px;
+}
+
+/* categories */
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.category {
+  min-width: 200px;
+  max-width: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 10px;
+}
+
+.category img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.category h2 {
+  position: absolute;
+  bottom: 10px;
+  background: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+/* products alanı */
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 250px;
+  height: 450px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 10px;
+}
+
+.card .img-wrapper {
+  width: 100%;
+  height: 200px;
+}
+
+.card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card .alt-kisim {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card .alt-kisim span {
+  color: greenyellow;
+}
+
+.card h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Sepet kısmı */
+
+.modal-kapsayici {
+  position: fixed;
+  background: rgba(128, 128, 128, 0.608);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  /* çocuk elemanı ortalamak için kullanılır daha kısadır. */
+  display: none;
+  place-items: center;
+}
+
+.active {
+  display: grid;
+}
+
+.modal {
+  background: white;
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.btn-kapsayici {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.btn-kapsayici img {
+  width: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-kapsayici img:hover {
+  scale: 0.95;
+  filter: drop-shadow(0 0 20px red);
+}
+
+#total {
+  font-size: 20px;
+}
+
+#count,
+#price {
+  font-weight: bold;
+  color: rgba(145, 223, 72);
+}
+
+/* sepetteki liste kısmı */
+
+#list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 10px;
+}
+
+#list .item .photo {
+  width: 60px;
+}
+
+#list .item #delete-img {
+  width: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#list .item #delete-img:hover {
+  transform: rotate(15deg);
+}
+
+/* sepete ekle buttonu */
+
+.button {
+  --color: #00a97f;
+  padding: 0.4em 0.8em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 14px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  color: rgb(10, 25, 30);
+}
+
+.button:active {
+  filter: brightness(0.8);
+}

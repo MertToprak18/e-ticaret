@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eticaret</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- üst kısım -->
+    <header>
+      <h1>E-Ticaret</h1>
+
+      <input type="text" placeholder="ürün ismi giriniz..." />
+
+      <div>
+        <button id="basket-btn">Sepet</button>
+        <button>Kayıt Ol</button>
+        <button>Giriş Yap</button>
+      </div>
+    </header>
+    <!-- ana içerik -->
+    <main>
+      <!-- kategoriler -->
+      <section id="category-sec">
+        <h1>Kategoriler</h1>
+
+        <div class="categories">
+          <!-- <div class="category">
+            <img src="https://picsum.photos/300/300" alt="" />
+            <h2>Elektronik</h2>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- ürünler -->
+      <section id="products-sec">
+        <h1>Ürünler</h1>
+
+        <div class="products">
+          <!-- <div class="card">
+            <div class="img-wrapper">
+              <img
+                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                alt=""
+              />
+            </div>
+
+            <h4>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h4>
+
+            <h4>men's clothing</h4>
+
+            <div class="alt-kisim">
+              <span>109.95$</span>
+              <button class="button">Sepete Ekle</button>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <!-- sepet modalı -->
+
+    <div class="modal-kapsayici">
+      <div class="modal">
+        <div class="btn-kapsayici">
+          <img id="close-btn" src="images/e-close.png" />
+        </div>
+
+        <div id="list">
+          <!-- <div class="item">
+            <img class="photo" src="/images/e-trash.png" />
+            <h3 class="title">Ürünün ismi</h3>
+            <h4 class="price">15₺</h4>
+            <p>Miktar:1</p>
+            <img id="delete-img" src="/images/e-trash.png" />
+          </div> -->
+        </div>
+
+        <div id="total">
+          <!-- <span id="count">0 Ürün</span>
+          Toplam:
+          <span id="price"> 0</span> ₺ -->
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
